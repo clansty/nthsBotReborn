@@ -21,6 +21,10 @@ type Config={
          * 管理群群号
          */
         admin:number
+        /**
+         * 日志群
+         */
+        log:number
     }
     /**
      * MongoDB 连接字符串

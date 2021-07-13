@@ -4,4 +4,6 @@ account:
 groups:
   main:
   admin:
+  log:
 db: mongodb://localhost
+dbName: nthsBot
