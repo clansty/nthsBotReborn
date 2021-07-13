@@ -1,0 +1,7 @@
+account:
+  qq:
+  passwd:
+groups:
+  main:
+  admin:
+db: mongodb://localhost

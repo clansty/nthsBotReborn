@@ -733,4 +733,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-data/*/t*
+data
+config.yaml
