@@ -7,6 +7,7 @@ export type LogLevel = 'trace' | 'info' | 'error'
 
 export default {
     info(message: string) {
+        console.log('[INFO]', message)
         addLogToDb({
             message,
             time: new Date(),
@@ -15,6 +16,7 @@ export default {
         bot.sendGroupMsg(config.groups.log, message, true)
     },
     trace(message: string) {
+        console.log('[TRACE]', message)
         addLogToDb({
             message,
             time: new Date(),
@@ -22,6 +24,7 @@ export default {
         })
     },
     err(message: string) {
+        console.log('[ERR]', message)
         addLogToDb({
             message,
             time: new Date(),

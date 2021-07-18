@@ -33,6 +33,6 @@ export const getUser = async (id: number) => {
     return user
 }
 
-export const updateUser = (user: User) => users.updateOne({id: user.id}, user)
+export const updateUser = (user: User) => users.updateOne({id: user.id}, {$set: user})
 
 export const addLogToDb = (log: DbLog) => logs.insertOne(log)

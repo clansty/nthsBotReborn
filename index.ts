@@ -5,6 +5,7 @@ import {attachInviteGroupHandler} from './events/inviteGroupHandler'
 import {attachAddFriendHandler} from './events/addFriendHandler'
 import {attachGroupMessageHandler} from './events/groupMessageHandler'
 import {attachPrivateMessageHandler} from './events/privateMessageHandler'
+import scanMembers from './modules/scanMembers'
 
 (async () => {
     await initStorage()
@@ -13,4 +14,6 @@ import {attachPrivateMessageHandler} from './events/privateMessageHandler'
     attachGroupMessageHandler(bot)
     attachPrivateMessageHandler(bot)
     console.log(`${version} 已启动`)
+
+    setTimeout(scanMembers, 10000)
 })()
