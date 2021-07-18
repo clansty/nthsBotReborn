@@ -1,4 +1,3 @@
-import {Status} from './Status'
 import {Role} from './Role'
 
 type User = {
@@ -8,8 +7,6 @@ type User = {
     enrollment: number
     junior: boolean
     prefix?: string
-    step: number
-    status: Status
     role: Role
     branch: boolean
 }

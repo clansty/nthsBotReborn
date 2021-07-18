@@ -1,6 +1,5 @@
 import {User} from '../types/user'
 import {Role} from '../types/Role'
-import {Status} from '../types/Status'
 import {CURRENT_YEAR, grades} from '../maps/enrollments'
 
 export const createUser = (id: number): User => ({
@@ -10,8 +9,6 @@ export const createUser = (id: number): User => ({
     name: '',
     nick: '',
     role: Role.normal,
-    status: Status.none,
-    step: 0,
     branch: false,
 })
 
