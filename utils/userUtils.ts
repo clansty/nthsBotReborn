@@ -1,6 +1,7 @@
 import {User} from '../types/user'
 import {Role} from '../types/Role'
 import {Status} from '../types/Status'
+import {CURRENT_YEAR, grades} from '../maps/enrollments'
 
 export const createUser = (id: number): User => ({
     id,
@@ -15,10 +16,8 @@ export const createUser = (id: number): User => ({
 })
 
 export const getGradeByEnrollment = (enr: number) => {
-    if (enr === 2021) return '高一'
-    if (enr === 2020) return '高二'
-    if (enr === 2019) return '高三'
-    if (enr < 1970 || enr > 2021) return '未知'
+    if (grades[enr]) return grades[enr]
+    if (enr < 1970 || enr > CURRENT_YEAR) return '未知'
     return (enr + 3) + '届'
 }
 
