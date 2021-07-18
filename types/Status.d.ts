@@ -1,4 +1,5 @@
 export enum Status {
     none,
-    status
+    setup,
+    confirmEnrollmentChange
 }

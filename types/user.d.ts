@@ -11,4 +11,5 @@ type User = {
     step: number
     status: Status
     role: Role
+    branch: boolean
 }
