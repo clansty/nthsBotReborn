@@ -30,3 +30,5 @@ export const getPrefixByUser = (user: User) => {
 
     return prefix
 }
+
+export const getProperNameCardByUser = (user: User) => getPrefixByUser(user) + ' | ' + user.nick
