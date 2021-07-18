@@ -9,6 +9,10 @@ export const init = async () => {
     const dba = await MongoClient.connect(config.db)
     const mdb = dba.db(config.dbName)
     users = mdb.collection('msgIds')
+    await users.createIndex('id', {
+        background: true,
+        unique: true,
+    })
 }
 
 export const getUser = async (id: number) => {
@@ -19,3 +23,5 @@ export const getUser = async (id: number) => {
     }
     return user
 }
+
+export const updateUser = (user: User) => users.updateOne({id: user.id}, user)
