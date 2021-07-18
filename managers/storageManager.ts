@@ -8,7 +8,7 @@ let users: Collection<User>
 export const init = async () => {
     const dba = await MongoClient.connect(config.db)
     const mdb = dba.db(config.dbName)
-    users = mdb.collection('msgIds')
+    users = mdb.collection('users')
     await users.createIndex('id', {
         background: true,
         unique: true,
