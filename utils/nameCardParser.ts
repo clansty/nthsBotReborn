@@ -11,13 +11,14 @@ export const parseEnrollment = (name: string): number => {
         let graduate = Number(/(\d{2,4}) *届/.exec(name)[1])
         if (graduate < CURRENT_YEAR + 4 - 2000)
             graduate += 2000
-        return graduate - 3
-    }
-    if (/(\d{2,4}) *级?/.test(name)) {
+        if (graduate > 1970 && graduate < CURRENT_YEAR + 4)
+            return graduate - 3
+    } else if (/(\d{2,4}) *级?/.test(name)) {
         let enrollment = Number(/(\d{2,4}) *级?/.exec(name)[1])
         if (enrollment < CURRENT_YEAR + 1 - 2000)
             enrollment += 2000
-        return enrollment
+        if (enrollment > 1970 && enrollment < CURRENT_YEAR + 1)
+            return enrollment
     }
     return 0
 }

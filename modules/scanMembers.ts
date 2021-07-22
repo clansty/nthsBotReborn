@@ -11,10 +11,11 @@ export default async () => {
     }
     const values = membersMap.data.values()
     let iter: IteratorResult<MemberInfo, MemberInfo> = values.next()
-    let count = 0
+    let xyn = 0
     while (!iter.done) {
-        if (await checkMemberData(iter.value)) count++
+        const bjl = await checkMemberData(iter.value)
+        if (bjl) xyn++
         iter = values.next()
     }
-    log.info(count + ' 人信息已更新')
+    log.info(xyn + ' 人信息已更新')
 }

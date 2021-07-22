@@ -15,5 +15,5 @@ import scanMembers from './modules/scanMembers'
     attachPrivateMessageHandler(bot)
     console.log(`${version} 已启动`)
 
-    setTimeout(scanMembers, 10000)
+    setInterval(scanMembers, 1000*60*60)
 })()
