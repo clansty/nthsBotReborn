@@ -34,8 +34,8 @@ export default async (member: MemberInfo, user?: User): Promise<boolean> => {
     }
     user.junior = parseJunior(card)
     const enrollment = parseEnrollment(card)
-    // if (enrollment !== user.enrollment) {
-    if (enrollment && (user.enrollment < 1970 || user.enrollment > CURRENT_YEAR)) {
+    if (enrollment !== user.enrollment) {
+    // if (enrollment && (user.enrollment < 1970 || user.enrollment > CURRENT_YEAR)) {
         changeReport += '\n年级: ' + getGradeByEnrollment(user.enrollment) + ' -> ' + getGradeByEnrollment(enrollment)
         user.enrollment = enrollment
     }
